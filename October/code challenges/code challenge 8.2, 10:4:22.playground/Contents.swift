@@ -14,7 +14,7 @@ func bubbleTime(_ num: [Int]) -> [Int] {
             }
         }
     }
-    return numBubble
+    return numBubble ins
 }
     bubbleTime([4,6,3,7,5,3,64,25,254])
    print(bubbleTime([4,6,3,7,5,3,64,25,254]))
