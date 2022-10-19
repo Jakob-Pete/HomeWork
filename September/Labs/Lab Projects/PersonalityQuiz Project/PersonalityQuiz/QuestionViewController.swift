@@ -8,6 +8,7 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
+    
     var questionIndex = 0
     var answersChosen: [Answer] = []
 
