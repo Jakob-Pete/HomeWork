@@ -5,7 +5,14 @@ protocol EmployeeDetailTableViewControllerDelegate: AnyObject {
     func employeeDetailTableViewController(_ controller: EmployeeDetailTableViewController, didSave employee: Employee)
 }
 
-class EmployeeDetailTableViewController: UITableViewController, UITextFieldDelegate {
+class EmployeeDetailTableViewController: UITableViewController, UITextFieldDelegate, EmployeeTypeTableViewControllerDelegate {
+    func employeeTypeTableViewController(_ controller: EmployeeTypeTableViewController, didSelect employeeType: EmployeeType) {
+        self.emplpyeeType = employeeType
+        employeeTypeLabel.textColor = .black
+        employeeTypeLabel.text = employeeType.description
+        updateSaveButtonState()
+    }
+    
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var dobLabel: UILabel!
@@ -16,12 +23,14 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
     
     weak var delegate: EmployeeDetailTableViewControllerDelegate?
     var employee: Employee?
+    var emplpyeeType: EmployeeType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateView()
         updateSaveButtonState()
+        dobDatePicker.date = employee?.dateOfBirth ?? Date()
     }
     
     func updateView() {
@@ -69,17 +78,27 @@ class EmployeeDetailTableViewController: UITableViewController, UITextFieldDeleg
         }
     }
     private func updateSaveButtonState() {
-        let shouldEnableSaveButton = nameTextField.text?.isEmpty == false
+        let shouldEnableSaveButton = nameTextField.text?.isEmpty == false && emplpyeeType != nil
         saveBarButtonItem.isEnabled = shouldEnableSaveButton
     }
     
+    
+    
+    @IBSegueAction func showEmployeeTypes(_ coder: NSCoder) -> EmployeeTypeTableViewController? {
+       let typeEmployeeController = EmployeeTypeTableViewController(coder: coder)
+        typeEmployeeController?.delegate = self
+        
+        
+        return typeEmployeeController
+    }
     @IBAction func saveButtonTapped(_ sender: Any) {
-        guard let name = nameTextField.text else {
+        guard let name = nameTextField.text, let employeeType = emplpyeeType else {
+            
             
             return
         }
         
-        let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: .exempt)
+        let employee = Employee(name: name, dateOfBirth: dobDatePicker.date, employeeType: employeeType)
         delegate?.employeeDetailTableViewController(self, didSave: employee)
     }
     
