@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Rep-->
-        <scene sceneID="Oau-hL-oQN">
-            <objects>
-                <viewController id="r1t-Yh-h5A" customClass="RepViewController" customModule="API_Project_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="T52-fz-kTp">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="LPS-kw-vrC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Rep" image="trash" catalog="system" selectedImage="trash.fill" id="hX8-4P-PCh"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fSq-bQ-8kg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="630" y="96"/>
-        </scene>
         <!--Doges-->
         <scene sceneID="z3G-B6-M3e">
             <objects>
@@ -42,6 +26,9 @@
                                 <rect key="frame" x="130" y="551" width="133" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Fetch!"/>
+                                <connections>
+                                    <action selector="newDogImage:" destination="tOZ-t7-jQr" eventType="touchUpInside" id="ucG-cQ-r1d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nwz-Ki-HoT"/>
@@ -58,6 +45,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Doges" image="pawprint" catalog="system" selectedImage="pawprint.fill" id="G7y-Oz-rfD"/>
+                    <connections>
+                        <outlet property="dogImageView" destination="HST-Xy-Qqt" id="fLa-RX-sem"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqX-Ut-w1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,12 +64,95 @@
                     </tabBar>
                     <connections>
                         <segue destination="tOZ-t7-jQr" kind="relationship" relationship="viewControllers" id="OlS-Xe-zSs"/>
-                        <segue destination="r1t-Yh-h5A" kind="relationship" relationship="viewControllers" id="8Nq-2L-pgk"/>
+                        <segue destination="f5k-kn-iCK" kind="relationship" relationship="viewControllers" id="aOM-FC-nER"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AjR-tp-74l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-274" y="-280"/>
+        </scene>
+        <!--Rep-->
+        <scene sceneID="Cqg-fZ-7j1">
+            <objects>
+                <tableViewController id="f5k-kn-iCK" customClass="RepTableViewController" customModule="API_Project_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="BB9-G6-qXw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="pau-os-LXR">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="f5k-kn-iCK" id="Xsl-kT-M4Q"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repView" rowHeight="82" id="fiz-6D-za1" customClass="RepTableViewCell" customModule="API_Project_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="393" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fiz-6D-za1" id="ybL-wF-rce">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="82"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="SqF-Uh-NJT">
+                                            <rect key="frame" x="20" y="3" width="353" height="76"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V81-aT-OW3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40.333333333333336" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqt-fm-aLs">
+                                                    <rect key="frame" x="0.0" y="21" width="36" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8t-UD-pyc">
+                                                    <rect key="frame" x="0.0" y="37" width="36.333333333333336" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EI-hp-zOB">
+                                                    <rect key="frame" x="0.0" y="58" width="28.333333333333332" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SqF-Uh-NJT" firstAttribute="leading" secondItem="ybL-wF-rce" secondAttribute="leading" constant="20" symbolic="YES" id="FmB-Py-lgj"/>
+                                        <constraint firstItem="SqF-Uh-NJT" firstAttribute="centerX" secondItem="ybL-wF-rce" secondAttribute="centerX" id="KGa-WM-or1"/>
+                                        <constraint firstItem="SqF-Uh-NJT" firstAttribute="top" secondItem="ybL-wF-rce" secondAttribute="top" constant="3" id="T8C-SN-Whf"/>
+                                        <constraint firstAttribute="bottom" secondItem="SqF-Uh-NJT" secondAttribute="bottom" constant="3" id="krA-3d-SPk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="linkLabel" destination="6EI-hp-zOB" id="wiJ-AK-Upz"/>
+                                    <outlet property="partyLable" destination="Vqt-fm-aLs" id="GPo-Lo-OAg"/>
+                                    <outlet property="repNameLable" destination="V81-aT-OW3" id="swb-tn-Vu1"/>
+                                    <outlet property="stateLabel" destination="x8t-UD-pyc" id="MTE-hJ-q1U"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f5k-kn-iCK" id="eci-Cb-J7a"/>
+                            <outlet property="delegate" destination="f5k-kn-iCK" id="FWt-GO-c7g"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Rep" image="trash" catalog="system" selectedImage="trash.fill" id="MwP-Cy-cXC"/>
+                    <connections>
+                        <outlet property="searchBar" destination="pau-os-LXR" id="Aaa-PK-K8v"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WrW-zS-NTb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623.66412213740455" y="124.64788732394366"/>
         </scene>
     </scenes>
     <resources>

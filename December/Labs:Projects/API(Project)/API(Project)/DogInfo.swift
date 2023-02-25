@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import UIKit
 
-struct Dog {
-    var message: UIImage
-    var status: String
-    
+
+struct DogInfo: Codable {
+    var image: URL
+   
+//    Could probably just use the message instead of image and the image = message.
     enum CodingKeys: String, CodingKey {
-        case message
-        case status
+        case image = "message"
+      
     }
 }

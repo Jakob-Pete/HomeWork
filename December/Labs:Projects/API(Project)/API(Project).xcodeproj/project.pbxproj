@@ -16,9 +16,14 @@
 		040369FB293A59FA0019C797 /* API_Project_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040369FA293A59FA0019C797 /* API_Project_Tests.swift */; };
 		04036A05293A59FA0019C797 /* API_Project_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A04293A59FA0019C797 /* API_Project_UITests.swift */; };
 		04036A07293A59FA0019C797 /* API_Project_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A06293A59FA0019C797 /* API_Project_UITestsLaunchTests.swift */; };
-		04036A16293A66320019C797 /* RepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A15293A66320019C797 /* RepViewController.swift */; };
 		04036A18293A66D10019C797 /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A17293A66D10019C797 /* DogViewController.swift */; };
 		04036A1A293A6BB90019C797 /* DogInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A19293A6BB90019C797 /* DogInfo.swift */; };
+		04036A1C293E45650019C797 /* DogInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A1B293E45650019C797 /* DogInfoController.swift */; };
+		04036A1F293E59110019C797 /* RepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A1E293E59110019C797 /* RepInfo.swift */; };
+		04036A5F293FABDF0019C797 /* Rep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A5E293FABDF0019C797 /* Rep.swift */; };
+		04036A63293FAE470019C797 /* RepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A62293FAE470019C797 /* RepTableViewCell.swift */; };
+		04036A662940E6340019C797 /* RepController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A652940E6340019C797 /* RepController.swift */; };
+		04036A6A2940EC200019C797 /* RepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04036A692940EC200019C797 /* RepTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +57,14 @@
 		04036A00293A59FA0019C797 /* API(Project)UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "API(Project)UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04036A04293A59FA0019C797 /* API_Project_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Project_UITests.swift; sourceTree = "<group>"; };
 		04036A06293A59FA0019C797 /* API_Project_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Project_UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		04036A15293A66320019C797 /* RepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepViewController.swift; sourceTree = "<group>"; };
 		04036A17293A66D10019C797 /* DogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		04036A19293A6BB90019C797 /* DogInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogInfo.swift; sourceTree = "<group>"; };
+		04036A1B293E45650019C797 /* DogInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogInfoController.swift; sourceTree = "<group>"; };
+		04036A1E293E59110019C797 /* RepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepInfo.swift; sourceTree = "<group>"; };
+		04036A5E293FABDF0019C797 /* Rep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rep.swift; sourceTree = "<group>"; };
+		04036A62293FAE470019C797 /* RepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepTableViewCell.swift; sourceTree = "<group>"; };
+		04036A652940E6340019C797 /* RepController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepController.swift; sourceTree = "<group>"; };
+		04036A692940EC200019C797 /* RepTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RepTableViewController.swift; path = RepStuff/RepTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +120,12 @@
 				040369E7293A59F70019C797 /* ViewController.swift */,
 				04036A17293A66D10019C797 /* DogViewController.swift */,
 				04036A19293A6BB90019C797 /* DogInfo.swift */,
-				04036A15293A66320019C797 /* RepViewController.swift */,
+				04036A1B293E45650019C797 /* DogInfoController.swift */,
+				04036A5E293FABDF0019C797 /* Rep.swift */,
+				04036A1E293E59110019C797 /* RepInfo.swift */,
+				04036A692940EC200019C797 /* RepTableViewController.swift */,
+				04036A62293FAE470019C797 /* RepTableViewCell.swift */,
+				04036A652940E6340019C797 /* RepController.swift */,
 				040369E9293A59F70019C797 /* Main.storyboard */,
 				040369EC293A59FA0019C797 /* Assets.xcassets */,
 				040369EE293A59FA0019C797 /* LaunchScreen.storyboard */,
@@ -268,11 +283,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				04036A1A293A6BB90019C797 /* DogInfo.swift in Sources */,
-				04036A16293A66320019C797 /* RepViewController.swift in Sources */,
+				04036A1F293E59110019C797 /* RepInfo.swift in Sources */,
+				04036A1C293E45650019C797 /* DogInfoController.swift in Sources */,
+				04036A662940E6340019C797 /* RepController.swift in Sources */,
 				040369E8293A59F70019C797 /* ViewController.swift in Sources */,
 				040369E4293A59F70019C797 /* AppDelegate.swift in Sources */,
 				04036A18293A66D10019C797 /* DogViewController.swift in Sources */,
+				04036A63293FAE470019C797 /* RepTableViewCell.swift in Sources */,
 				040369E6293A59F70019C797 /* SceneDelegate.swift in Sources */,
+				04036A6A2940EC200019C797 /* RepTableViewController.swift in Sources */,
+				04036A5F293FABDF0019C797 /* Rep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,26 +9,48 @@ import UIKit
 
 class DogViewController: ViewController {
 
-    struct Dog {
-        var message: UIImage
-        
-    }
+    @IBOutlet weak var dogImageView: UIImageView!
+    
+    let controller = DogInfoController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        dogImageView.image = UIImage(systemName: "photo.on.rectangle")
+        
+        Task {
+            do {
+                let photoInfo = try await controller.fetchPhotoInfo()
+                updateUI(with: photoInfo)
+            } catch {
+                updateUIError(with: error)
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func newDogImage(_ sender: Any) {
+        Task {
+            do {
+                let image = try await controller.fetchPhotoInfo()
+                updateUI(with: image)
+            } catch {
+                updateUIError(with: error)
+            }
+        }
     }
-    */
     
+    func updateUI(with dogInfo: DogInfo) {
+        Task {
+            do {
+                let image = try await controller.fetchImage(from: dogInfo.image)
+                dogImageView.image = image
+            } catch {
+                updateUIError(with: error)
+            }
+        }
+    }
+    
+    func updateUIError(with error: Error) {
+        dogImageView.image = UIImage(systemName: "exclamationmark.octagon")
+    }
 }
