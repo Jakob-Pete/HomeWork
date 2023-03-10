@@ -50,6 +50,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func getUserButton(_ sender: Any) {
+//        if let random = nameArray.randomElement() {
+//
+//        }
         nameArray.randomElement()!
         
         fetchedUser.text = "Your user is: \(nameArray.randomElement()!)"

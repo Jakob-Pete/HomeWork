@@ -32,21 +32,6 @@ struct Hand {
     }
 }
 
-func determineWinner(hands: [Hand]) -> Hand {
-    var bestHand = hands[0]
-    var (bestScore, bestHandType) = getScoreAndType(for: bestHand)
-    
-    for hand in hands.dropFirst() {
-        let (score, handType) = getScoreAndType(for: hand)
-        if score > bestScore {
-            bestHand = hand
-            bestScore = score
-            bestHandType = handType
-        }
-    }
-    bestHand.handType = bestHandType
-    return bestHand
-}
 
 private func getScoreAndType(for hand: Hand) -> (Int, String) {
     let sortedCards = hand.cards.sorted { $0.value.rawValue > $1.value.rawValue }
@@ -103,6 +88,22 @@ private func getScoreAndType(for hand: Hand) -> (Int, String) {
 }
 
 
+func determineWinner(hands: [Hand]) -> Hand {
+    var bestHand = hands[0]
+    var (bestScore, bestHandType) = getScoreAndType(for: bestHand)
+    
+    for hand in hands.dropFirst() {
+        let (score, handType) = getScoreAndType(for: hand)
+        if score > bestScore {
+            bestHand = hand
+            bestScore = score
+            bestHandType = handType
+        }
+    }
+    bestHand.handType = bestHandType
+    return bestHand
+}
+
 let hand1 = Hand(cards: [
     Card(suit: .hearts, value: .ace),
     Card(suit: .hearts, value: .king),
@@ -127,7 +128,22 @@ let hand3 = Hand(cards: [
     Card(suit: .spades, value: .five)
 ])!
 
-let hands = [hand1, hand2, hand3]
+let hand4 = Hand(cards: [
+    Card(suit: .hearts, value: .five),
+    Card(suit: .clubs, value: .five),
+    Card(suit: .hearts, value: .six),
+    Card(suit: .diamonds, value: .six),
+    Card(suit: .spades, value: .six)
+])!
+
+let hand5 = Hand(cards: [
+    Card(suit: .hearts, value: .five),
+    Card(suit: .hearts, value: .six),
+    Card(suit: .hearts, value: .seven),
+    Card(suit: .hearts, value: .eight),
+    Card(suit: .hearts, value: .nine)
+])!
+let hands = [hand4, hand3, hand5, hand2]
 
 let winner = determineWinner(hands: hands)
 for winningCard in winner.cards {
