@@ -17,10 +17,10 @@ struct ContentView: View {
     @State private var showingAlert = false
     
     static var defaultWakeTime: Date {
-    var compnents = DateComponents()
-    compnents.hour = 7
-    compnents.minute = 0
-    return Calendar.current.date(from: compnents) ?? Date.now
+    var components = DateComponents()
+    components.hour = 7
+    components.minute = 0
+    return Calendar.current.date(from: components) ?? Date.now
 }
     
     var body: some View {
