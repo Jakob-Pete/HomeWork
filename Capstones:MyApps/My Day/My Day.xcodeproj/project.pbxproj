@@ -17,6 +17,7 @@
 		04B9604B29BB9E98006E213F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9604A29BB9E98006E213F /* Settings.swift */; };
 		04B9604D29BF654E006E213F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9604C29BF654E006E213F /* PersistenceController.swift */; };
 		04B9606B29BF7C89006E213F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9606A29BF7C89006E213F /* MainView.swift */; };
+		04B9606D29C20C35006E213F /* SetReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9606C29C20C35006E213F /* SetReminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		04B9604A29BB9E98006E213F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		04B9604C29BF654E006E213F /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		04B9606A29BF7C89006E213F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		04B9606C29C20C35006E213F /* SetReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				04B9606A29BF7C89006E213F /* MainView.swift */,
 				04B9603729BB86EC006E213F /* ContentView.swift */,
 				04B9604829BB9E8B006E213F /* Dayscheduled.swift */,
+				04B9606C29C20C35006E213F /* SetReminder.swift */,
 				04B9604A29BB9E98006E213F /* Settings.swift */,
 				04B9604C29BF654E006E213F /* PersistenceController.swift */,
 				04B9603929BB86EE006E213F /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B9606D29C20C35006E213F /* SetReminder.swift in Sources */,
 				04B9604B29BB9E98006E213F /* Settings.swift in Sources */,
 				04B9606B29BF7C89006E213F /* MainView.swift in Sources */,
 				04B9604D29BF654E006E213F /* PersistenceController.swift in Sources */,

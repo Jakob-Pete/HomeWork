@@ -33,6 +33,8 @@ struct Dayscheduled: View {
 //                    Used a label for accessibility benefits for screen readers
                 } .sheet(isPresented: $newReminderAlert) {
                     
+                } content: {
+                    SetReminder()
                 }
             }
         }
