@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
+    @AppStorage("DarkModeEnabled") private var darkModeEnabled = false
     var body: some View {
         TabView {
-            ContentView()
+            TrackingAppointmentsView()
                 .tabItem {
                     Label("Tracking", systemImage: "checkerboard.shield")
                 }
@@ -18,10 +19,12 @@ struct MainView: View {
                 .tabItem{
                     Label("My Day", systemImage: "calendar")
                 }
-            Settings()
+            Settings(darkModeEnabled: $darkModeEnabled)
                 .tabItem {
                     Label("Settings", systemImage: "gearshape.2.fill")
                 }
+        }
+        .onAppear { DarkMode.shared.handleDarkMode(darkMode: darkModeEnabled)
         }
     }
 }

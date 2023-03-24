@@ -8,22 +8,25 @@
 import SwiftUI
 import UserNotifications
 struct Dayscheduled: View {
+//    another options is only showing what events you have coming up and what time they are coming up, apple calender has a option for it that i can refrence, also uses multiple views to complete a day with appointments/events
     @State private var dayTimes = ["5am", "6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm",  "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm"]
     @State private var alertIsOn = false
     @State private var newReminderAlert = false
     @State private var reminderName = ""
+    
     var body: some View {
+//        make a view that scrolls for the whole view instead of the list so it goes over the entire view
         NavigationView {
             List {
                 ForEach(dayTimes, id: \.self) {
                         Text("\($0)")
                     }
-                
+//             (vStack)   Have a veiw for the whole day and give it a height
             }.listStyle(.grouped)
-            
+//            make a v stack for blocking out appointments and make sure they have a height depending on the time youre using
 
 //            need to add a button to the bottom trailing side, neeed to set line inbetween the numbers from the day and those need to be leading from 5am to 11pm
-            .navigationTitle("Your Day")
+        
             .toolbar {
                 Button {
                     newReminderAlert.toggle()
@@ -34,9 +37,10 @@ struct Dayscheduled: View {
                 } .sheet(isPresented: $newReminderAlert) {
                     
                 } content: {
-                    SetReminder()
+                    SetReminder(reminder: Reminder(reminderTitle: "String", startTime: Date.now, endTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date())!, typeOfReminder: "String", colorReminder: Color.red, additionalText: "String"))
                 }
             }
+            .navigationTitle("Your Day")
         }
     }
 }
