@@ -1,8 +1,8 @@
 //
 //  MainView.swift
-//  My Day
+//  My Day(WithOutCoreDataLoaded)
 //
-//  Created by mac on 3/13/23.
+//  Created by mac on 3/27/23.
 //
 
 import SwiftUI
@@ -16,11 +16,11 @@ struct MainView: View {
                 .tabItem {
                     Label("Tracking", systemImage: "checkerboard.shield")
                 }
-            Dayscheduled()
+            DailySchedule()
                 .tabItem{
                     Label("My Day", systemImage: "calendar")
                 }
-            Settings(darkModeEnabled: $darkModeEnabled)
+            SettingsView(darkModeEnabled: $darkModeEnabled)
                 .tabItem {
                     Label("Settings", systemImage: "gearshape.2.fill")
                 }

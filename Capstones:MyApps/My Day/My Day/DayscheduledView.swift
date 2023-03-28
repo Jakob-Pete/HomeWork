@@ -13,7 +13,8 @@ struct Dayscheduled: View {
     @State private var alertIsOn = false
     @State private var newReminderAlert = false
     @State private var reminderName = ""
-    
+    @State private var differentView = false
+//    @State var reminder: Reminder
     var body: some View {
 //        make a view that scrolls for the whole view instead of the list so it goes over the entire view
         NavigationView {
@@ -29,6 +30,17 @@ struct Dayscheduled: View {
         
             .toolbar {
                 Button {
+                    differentView.toggle()
+                } label: {
+                    Label("Different day view", systemImage: "plus")
+                } .sheet(isPresented: $differentView) {
+                    
+                } content: {
+                    DayScheduledByAppointments()
+                    
+                }
+                
+                Button {
                     newReminderAlert.toggle()
                     print("Created New Goal/Event")
                 } label: {
@@ -37,7 +49,7 @@ struct Dayscheduled: View {
                 } .sheet(isPresented: $newReminderAlert) {
                     
                 } content: {
-                    SetReminder(reminder: Reminder(reminderTitle: "String", startTime: Date.now, endTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date())!, typeOfReminder: "String", colorReminder: Color.red, additionalText: "String"))
+                    SetReminder()
                 }
             }
             .navigationTitle("Your Day")

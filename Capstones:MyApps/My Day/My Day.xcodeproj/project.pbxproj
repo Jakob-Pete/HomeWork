@@ -21,6 +21,10 @@
 		04B9607129C4C0D8006E213F /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9607029C4C0D8006E213F /* Reminder.swift */; };
 		04D8312E29CA0B6A00A0D737 /* DayScheduledByAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8312D29CA0B6A00A0D737 /* DayScheduledByAppointments.swift */; };
 		04D8313129CC97F200A0D737 /* DarkMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8313029CC97F200A0D737 /* DarkMode.swift */; };
+		04D8313429CDEF1400A0D737 /* ColorOfEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8313329CDEF1400A0D737 /* ColorOfEvent.swift */; };
+		04D8313629CDEF2500A0D737 /* TitleOfEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8313529CDEF2500A0D737 /* TitleOfEvent.swift */; };
+		04D8313829CDEF4900A0D737 /* TimeOfEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8313729CDEF4900A0D737 /* TimeOfEvent.swift */; };
+		04D8313A29D1D84400A0D737 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8313929D1D84400A0D737 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		04B9607029C4C0D8006E213F /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		04D8312D29CA0B6A00A0D737 /* DayScheduledByAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayScheduledByAppointments.swift; sourceTree = "<group>"; };
 		04D8313029CC97F200A0D737 /* DarkMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkMode.swift; sourceTree = "<group>"; };
+		04D8313329CDEF1400A0D737 /* ColorOfEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOfEvent.swift; sourceTree = "<group>"; };
+		04D8313529CDEF2500A0D737 /* TitleOfEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleOfEvent.swift; sourceTree = "<group>"; };
+		04D8313729CDEF4900A0D737 /* TimeOfEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOfEvent.swift; sourceTree = "<group>"; };
+		04D8313929D1D84400A0D737 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +82,7 @@
 				04B9603529BB86EC006E213F /* My_DayApp.swift */,
 				04B9606A29BF7C89006E213F /* MainView.swift */,
 				04B9603729BB86EC006E213F /* TrackingAppointmentsView.swift */,
-				04D8312D29CA0B6A00A0D737 /* DayScheduledByAppointments.swift */,
+				04D8313229CDEEE700A0D737 /* Events */,
 				04B9604829BB9E8B006E213F /* DayscheduledView.swift */,
 				04B9606C29C20C35006E213F /* SetReminderView.swift */,
 				04B9604A29BB9E98006E213F /* SettingsView.swift */,
@@ -84,6 +92,7 @@
 				04B9603929BB86EE006E213F /* Assets.xcassets */,
 				04B9603E29BB86EE006E213F /* Persistence.swift */,
 				04B9604029BB86EE006E213F /* My_Day.xcdatamodeld */,
+				04D8313929D1D84400A0D737 /* DataController.swift */,
 				04B9603B29BB86EE006E213F /* Preview Content */,
 			);
 			path = "My Day";
@@ -103,6 +112,17 @@
 				04D8313029CC97F200A0D737 /* DarkMode.swift */,
 			);
 			path = DarkMode;
+			sourceTree = "<group>";
+		};
+		04D8313229CDEEE700A0D737 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				04D8312D29CA0B6A00A0D737 /* DayScheduledByAppointments.swift */,
+				04D8313329CDEF1400A0D737 /* ColorOfEvent.swift */,
+				04D8313529CDEF2500A0D737 /* TitleOfEvent.swift */,
+				04D8313729CDEF4900A0D737 /* TimeOfEvent.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,16 +195,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D8313629CDEF2500A0D737 /* TitleOfEvent.swift in Sources */,
 				04D8313129CC97F200A0D737 /* DarkMode.swift in Sources */,
 				04B9606D29C20C35006E213F /* SetReminderView.swift in Sources */,
 				04B9604B29BB9E98006E213F /* SettingsView.swift in Sources */,
 				04B9606B29BF7C89006E213F /* MainView.swift in Sources */,
 				04B9604D29BF654E006E213F /* PersistenceController.swift in Sources */,
+				04D8313829CDEF4900A0D737 /* TimeOfEvent.swift in Sources */,
 				04B9603F29BB86EE006E213F /* Persistence.swift in Sources */,
 				04B9604929BB9E8B006E213F /* DayscheduledView.swift in Sources */,
 				04B9603829BB86EC006E213F /* TrackingAppointmentsView.swift in Sources */,
 				04B9604229BB86EE006E213F /* My_Day.xcdatamodeld in Sources */,
 				04D8312E29CA0B6A00A0D737 /* DayScheduledByAppointments.swift in Sources */,
+				04D8313429CDEF1400A0D737 /* ColorOfEvent.swift in Sources */,
+				04D8313A29D1D84400A0D737 /* DataController.swift in Sources */,
 				04B9603629BB86EC006E213F /* My_DayApp.swift in Sources */,
 				04B9607129C4C0D8006E213F /* Reminder.swift in Sources */,
 			);

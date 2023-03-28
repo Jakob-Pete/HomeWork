@@ -1,13 +1,12 @@
 //
-//  SetReminder.swift
-//  My Day
+//  AddReminder.swift
+//  My Day(WithOutCoreDataLoaded)
 //
-//  Created by mac on 3/15/23.
+//  Created by mac on 3/27/23.
 //
 
 import SwiftUI
-
-struct SetReminder: View {
+struct AddReminder: View {
     @Environment(\.managedObjectContext) var moc
     //    @State var reminder: Reminder
     @State private var reminderTitle = ""
@@ -39,15 +38,16 @@ struct SetReminder: View {
                     Spacer()
                     
                     DatePicker("Please enter a time", selection: $startTime,
-                               displayedComponents: [.hourAndMinute])
+                                 displayedComponents: [.hourAndMinute])
                     .datePickerStyle(.compact)
                     .labelsHidden()
-                    
+//                    .minuteInterval(5)
                 }
                 
                 DatePicker("End Time", selection: $endTime,
                            displayedComponents: [.hourAndMinute])
                 .datePickerStyle(.compact)
+//                .minuteInterval(5)
                 
                 Picker("Event", selection: $typeOfReminder) {
                     ForEach(reminderType, id: \.self) {
@@ -145,9 +145,9 @@ struct SetReminder: View {
 }
 
 
-struct SetReminder_Previews: PreviewProvider {
+struct AddReminder_Previews: PreviewProvider {
     
     static var previews: some View {
-        SetReminder()
+        AddReminder()
     }
 }
